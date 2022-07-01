@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import os
+from re import I
 
 from tablero import Tablero
 from jugador import Jugador
@@ -48,10 +49,14 @@ class Juego:
                 self.turno += 1
 
                 if self.tablero.hayJugadaGanadora():
-                    print(f"\n    Felicidades jugador [ {jugador.token} ]! Has ganado")
+                    print(f"\n    Felicidades jugador [ {jugador} ]! Has ganado")
                     break
 
             if not self.tablero.hayJugadaGanadora():
                 print("\n    EMPATE: Habéis llegado al final sin que gane nadie.")
-
+            
+            if not self.continuePlaying():
+                break
+            
             print("\n    Gracias por volver a jugar, está claro que te estás divirtiendo")
+        
