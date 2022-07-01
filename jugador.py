@@ -1,11 +1,11 @@
-from colorhelper import rojo, verde
+from colorhelper import rojo, azul
 
 
 class Jugador:
     def __init__(self, token, valor):
         self._token = token
         self.valor = valor
-        self.color = rojo if self.valor == 1 else verde
+        self.color = rojo if self.valor == 1 else azul
 
     def get_token(self):
         return self.color(self._token)
